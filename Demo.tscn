@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://cameras/GCC2D.tscn" type="PackedScene" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
+
+[node name="GCC2D" parent="." instance=ExtResource( 2 )]
+anchor_mode = 0
+rotating = true
+current = true
+limit_left = -100000
+limit_top = -100000
+limit_right = 100000
+limit_bottom = 100000

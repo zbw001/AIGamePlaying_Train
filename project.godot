@@ -1,0 +1,200 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "DrawLine3D",
+"language": "GDScript",
+"path": "res://addons/godot_rl_agents/sensors/sensors_3d/DrawLine3D.gd"
+}, {
+"base": "Node",
+"class": "GDInv_Inventory",
+"language": "GDScript",
+"path": "res://addons/gdinv/GDInv_Inventory.gd"
+}, {
+"base": "Object",
+"class": "GDInv_ItemDefinition",
+"language": "GDScript",
+"path": "res://addons/gdinv/GDInv_ItemDefinition.gd"
+}, {
+"base": "Object",
+"class": "GDInv_ItemStack",
+"language": "GDScript",
+"path": "res://addons/gdinv/GDInv_ItemStack.gd"
+}, {
+"base": "Node2D",
+"class": "ISensor2D",
+"language": "GDScript",
+"path": "res://addons/godot_rl_agents/sensors/sensors_2d/ISensor2D.gd"
+}, {
+"base": "Spatial",
+"class": "ISensor3D",
+"language": "GDScript",
+"path": "res://addons/godot_rl_agents/sensors/sensors_3d/ISensor3D.gd"
+}, {
+"base": "Reference",
+"class": "InputEventMultiScreenDrag",
+"language": "GDScript",
+"path": "res://GDTIM-v1_1_0/CustomInputEvents/InputEventMultiScreenDrag.gd"
+}, {
+"base": "Reference",
+"class": "InputEventScreenPinch",
+"language": "GDScript",
+"path": "res://GDTIM-v1_1_0/CustomInputEvents/InputEventScreenPinch.gd"
+}, {
+"base": "Reference",
+"class": "InputEventScreenTwist",
+"language": "GDScript",
+"path": "res://GDTIM-v1_1_0/CustomInputEvents/InputEventScreenTwist.gd"
+}, {
+"base": "Reference",
+"class": "InputEventSingleScreenDrag",
+"language": "GDScript",
+"path": "res://GDTIM-v1_1_0/CustomInputEvents/InputEventSingleScreenDrag.gd"
+}, {
+"base": "Reference",
+"class": "InputEventSingleScreenTap",
+"language": "GDScript",
+"path": "res://GDTIM-v1_1_0/CustomInputEvents/InputEventSingleScreenTap.gd"
+}, {
+"base": "Reference",
+"class": "InputEventSingleScreenTouch",
+"language": "GDScript",
+"path": "res://GDTIM-v1_1_0/CustomInputEvents/InputEventSingleScreenTouch.gd"
+}, {
+"base": "Spatial",
+"class": "RGBCameraSensor3D",
+"language": "GDScript",
+"path": "res://addons/godot_rl_agents/sensors/sensors_3d/RGBCameraSensor3D.gd"
+}, {
+"base": "ISensor3D",
+"class": "RayCastSensor3D",
+"language": "GDScript",
+"path": "res://addons/godot_rl_agents/sensors/sensors_3d/RaycastSensor3D.gd"
+}, {
+"base": "ISensor2D",
+"class": "RaycastSensor2D",
+"language": "GDScript",
+"path": "res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.gd"
+} ]
+_global_script_class_icons={
+"DrawLine3D": "",
+"GDInv_Inventory": "",
+"GDInv_ItemDefinition": "",
+"GDInv_ItemStack": "",
+"ISensor2D": "",
+"ISensor3D": "",
+"InputEventMultiScreenDrag": "",
+"InputEventScreenPinch": "",
+"InputEventScreenTwist": "",
+"InputEventSingleScreenDrag": "",
+"InputEventSingleScreenTap": "",
+"InputEventSingleScreenTouch": "",
+"RGBCameraSensor3D": "",
+"RayCastSensor3D": "",
+"RaycastSensor2D": ""
+}
+
+[PluginSettings]
+
+gdinv/ItemJsonPaths=PoolStringArray( "res://assets/data/items/" )
+gdinv/LoadOnReady=true
+gdinv/RecursiveLoad=true
+
+[application]
+
+config/name="Project"
+run/main_scene="res://scenes/BatchEnvs.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Consts="*res://scripts/consts.gd"
+GDInv_ItemDB="*res://addons/gdinv/GDInv_ItemDB.gd"
+InputManager="*res://GDTIM-v1_1_0/InputManager.gd"
+Global="*res://scripts/global.gd"
+Utils="*res://scripts/utils.gd"
+
+[display]
+
+window/size/width=1536
+window/size/height=900
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gdinv/plugin.cfg", "res://addons/godot_rl_agents/plugin.cfg" )
+
+[global]
+
+display=false
+stretch=false
+d=false
+export=false
+
+[gui]
+
+theme/custom_font="res://assets/fonts/Kenny Pixel.tres"
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+place={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+throw={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+break={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+zoom_in={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+zoom_out={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

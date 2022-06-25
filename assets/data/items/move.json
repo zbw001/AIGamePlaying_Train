@@ -1,0 +1,9 @@
+{
+    "id": "move",
+    "attributes": {
+        "maxStackSize": 0,
+        "texture": "res://assets/move.png",
+        "placeable": false,
+        "throwable": false
+    }
+}

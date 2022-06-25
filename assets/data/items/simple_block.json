@@ -1,0 +1,10 @@
+{
+    "id": "simple_block",
+    "attributes": {
+        "maxStackSize": 64,
+        "texture": "res://assets/block.png",
+        "placeable": true,
+        "throwable": false,
+        "blockID" : [23, 24, 25, 26, 27, 28]
+    }
+}

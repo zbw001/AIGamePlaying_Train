@@ -1,0 +1,9 @@
+{
+    "id": "bomb",
+    "attributes": {
+        "maxStackSize": 64,
+        "texture": "res://assets/bomb.png",
+        "placeable": false,
+        "throwable": true
+    }
+}
